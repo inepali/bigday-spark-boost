@@ -1,0 +1,75 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Star, Quote } from "lucide-react";
+
+export const TestimonialsSection = () => {
+  const testimonials = [
+    {
+      name: "Sruti Hall",
+      review: "We had a beautiful day for a wedding. Bipin and Sanjay from Big Day Story Carolinas captured our memories beautifully. Their professionalism and patience with us was appreciated. It was my oldest daughter's wedding, and I had no idea what I was doing. They guided us through the process. The sneak peek was sent out quickly so we had a preview of what to expect. The video captured moments I had missed and had me tearing up all over again.",
+      rating: 5
+    },
+    {
+      name: "Kathy Leng",
+      review: "My now husband and I worked with Bipin and Sanjay from Big Day Story Carolinas on the day of our wedding. They were wonderful and very accommodating. They captured every moment and captured it beautifully. We would definitely recommend to friends and family as well as anyone else. They are very dedicated to their work and are willing to do anything to make your day wonderful and special. Very grateful to have them a part of our big day.",
+      rating: 5
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-gradient-elegant">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            What Our Couples
+            <span className="block text-primary">Are Saying</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            See what our clients have to say about our wedding photography and videography services in Charlotte, NC.
+          </p>
+        </div>
+
+        {/* Testimonials */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {testimonials.map((testimonial, index) => (
+            <Card key={index} className="shadow-elegant border-0 bg-card/95 backdrop-blur-sm relative overflow-hidden">
+              {/* Quote decoration */}
+              <div className="absolute top-4 right-4 opacity-10">
+                <Quote className="w-16 h-16 text-primary" />
+              </div>
+              
+              <CardContent className="p-8 relative">
+                {/* Stars */}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-gold text-gold" />
+                  ))}
+                </div>
+                
+                {/* Review */}
+                <blockquote className="text-muted-foreground mb-6 leading-relaxed">
+                  "{testimonial.review}"
+                </blockquote>
+                
+                {/* Author */}
+                <div className="border-t border-border pt-4">
+                  <div className="font-semibold text-foreground">{testimonial.name}</div>
+                  <div className="text-sm text-muted-foreground">Verified Client</div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Zola Badge */}
+        <div className="text-center mt-12">
+          <div className="inline-flex items-center gap-3 bg-card/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-soft">
+            <Star className="w-5 h-5 text-gold fill-gold" />
+            <span className="text-sm font-medium">Featured Vendor on Zola</span>
+            <span className="text-xs text-muted-foreground">• Premium Wedding Directory</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
