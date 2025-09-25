@@ -35,7 +35,7 @@ export const HeroSection = () => {
           <Button 
             variant="hero" 
             size="xl"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => window.location.href = '/booking'}
             className="min-w-[200px]"
           >
             Book Your Wedding
@@ -43,7 +43,7 @@ export const HeroSection = () => {
           <Button 
             variant="elegant" 
             size="xl"
-            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => window.location.href = '/packages'}
             className="min-w-[200px]"
           >
             View Packages
