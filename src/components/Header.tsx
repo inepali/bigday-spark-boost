@@ -48,11 +48,11 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             {/* Phone - Hidden on small screens */}
             <a 
-              href="tel:+17044816631" 
+              href="tel:+17047505858" 
               className="hidden sm:flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               <Phone className="h-4 w-4" />
-              <span>(704) 481-6631</span>
+              <span>(704) 750-5858</span>
             </a>
             
             {/* Social Links */}
