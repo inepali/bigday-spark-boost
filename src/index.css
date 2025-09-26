@@ -73,6 +73,8 @@ Elegant purple and gold theme for premium wedding services
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --header: 60 1% 85%;
   }
 
   .dark {
@@ -124,6 +126,8 @@ Elegant purple and gold theme for premium wedding services
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --header: 60 1% 85%;
   }
 }
 
