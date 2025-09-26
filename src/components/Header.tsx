@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Facebook, Instagram, Mail, Phone } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const location = useLocation();
@@ -18,13 +19,12 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="text-2xl font-serif text-primary font-bold tracking-tight">
-              Big Day Story
-            </div>
-            <div className="text-lg font-serif text-gold font-medium">
-              Carolinas
-            </div>
+          <Link to="/" className="flex items-center group">
+            <img 
+              src={logo} 
+              alt="Big Day Story Carolinas - Wedding Photography" 
+              className="h-12 w-auto transition-transform group-hover:scale-105"
+            />
           </Link>
 
           {/* Navigation - Hidden on mobile */}
