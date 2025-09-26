@@ -2,9 +2,12 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Facebook, Instagram, Mail, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
+import LogoProcessor from "./LogoProcessor";
+import { useState } from "react";
 
 const Header = () => {
   const location = useLocation();
+  const [processedLogo, setProcessedLogo] = useState<string | null>(null);
   
   const isActive = (path: string) => location.pathname === path;
   
@@ -20,11 +23,13 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <img 
-              src={logo} 
-              alt="Big Day Story Carolinas - Wedding Photography" 
-              className="h-12 w-auto transition-transform group-hover:scale-105"
-            />
+            <LogoProcessor onProcessed={setProcessedLogo}>
+              <img 
+                src={processedLogo || logo} 
+                alt="Big Day Story Carolinas - Wedding Photography" 
+                className="h-12 w-auto transition-transform group-hover:scale-105"
+              />
+            </LogoProcessor>
           </Link>
 
           {/* Navigation - Hidden on mobile */}
