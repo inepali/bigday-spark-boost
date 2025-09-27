@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import { ScrollToTop } from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Packages from "./pages/Packages";
 import Portfolio from "./pages/Portfolio";
@@ -18,6 +19,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <div className="min-h-screen">
           <Header />
           <Routes>
