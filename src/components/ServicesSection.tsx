@@ -108,10 +108,10 @@ export const ServicesSection = () => {
               <div className="text-center pt-6 border-t border-border">
                 <div className="mb-4">
                   <p className="text-sm text-muted-foreground mb-2">
-                    Starting at <span className="line-through">$2,000</span>
+                    Starting price <span className="line-through">$4,000</span>
                   </p>
                   <p className="text-2xl font-bold text-primary">
-                    Packages from $1,600
+                    Package Price $3,400
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
