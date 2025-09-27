@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Heart, Camera, Video, Star } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const ServicesSection = () => {
+  const navigate = useNavigate();
   const packageFeatures = [
     "8 hours of photographer & videographer working together",
     "Pre-ceremony, ceremony, and reception coverage",
@@ -121,6 +123,13 @@ export const ServicesSection = () => {
                     onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Get Your Quote
+                  </Button>
+                  <Button 
+                    variant="default" 
+                    size="lg"
+                    onClick={() => navigate('/packages')}
+                  >
+                    View Packages
                   </Button>
                   <Button 
                     variant="outline" 
