@@ -31,8 +31,6 @@ export default function Booking() {
     packageType: "",
     addOns: [] as string[],
     guestCount: "",
-    ceremonyTime: "",
-    receptionTime: "",
     message: "",
     hearAboutUs: ""
   });
@@ -83,8 +81,6 @@ export default function Booking() {
           packageLabel: packageLabel,
           addOns: addOnLabels,
           guestCount: formData.guestCount,
-          ceremonyTime: formData.ceremonyTime,
-          receptionTime: formData.receptionTime,
           message: formData.message,
           hearAboutUs: formData.hearAboutUs,
         }
@@ -105,8 +101,6 @@ export default function Booking() {
         packageType: "",
         addOns: [],
         guestCount: "",
-        ceremonyTime: "",
-        receptionTime: "",
         message: "",
         hearAboutUs: ""
       });
@@ -252,7 +246,7 @@ export default function Booking() {
                   {/* Wedding Details */}
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="venue">Wedding Venue</Label>
+                      <Label htmlFor="venue">Wedding Venue or Wedding Location</Label>
                       <Input
                         id="venue"
                         value={formData.venue}
@@ -268,26 +262,6 @@ export default function Booking() {
                         value={formData.guestCount}
                         onChange={(e) => setFormData(prev => ({ ...prev, guestCount: e.target.value }))}
                         placeholder="e.g., 100-150"
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="ceremonyTime">Ceremony Time</Label>
-                      <Input
-                        id="ceremonyTime"
-                        type="time"
-                        value={formData.ceremonyTime}
-                        onChange={(e) => setFormData(prev => ({ ...prev, ceremonyTime: e.target.value }))}
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="receptionTime">Reception Time</Label>
-                      <Input
-                        id="receptionTime"
-                        type="time"
-                        value={formData.receptionTime}
-                        onChange={(e) => setFormData(prev => ({ ...prev, receptionTime: e.target.value }))}
                       />
                     </div>
                   </div>

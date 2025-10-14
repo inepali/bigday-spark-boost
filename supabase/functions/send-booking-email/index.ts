@@ -18,8 +18,6 @@ interface BookingEmailRequest {
   packageLabel: string;
   addOns: string[];
   guestCount: string;
-  ceremonyTime: string;
-  receptionTime: string;
   message: string;
   hearAboutUs: string;
 }
@@ -43,10 +41,8 @@ const handler = async (req: Request): Promise<Response> => {
             <h2 style="color: #c2185b; margin-top: 0;">Wedding Details</h2>
             <p><strong>Couple Names:</strong> ${bookingData.coupleNames}</p>
             <p><strong>Wedding Date:</strong> ${bookingData.weddingDate}</p>
-            <p><strong>Venue:</strong> ${bookingData.venue || 'Not specified'}</p>
+            <p><strong>Venue or Location:</strong> ${bookingData.venue || 'Not specified'}</p>
             <p><strong>Guest Count:</strong> ${bookingData.guestCount || 'Not specified'}</p>
-            <p><strong>Ceremony Time:</strong> ${bookingData.ceremonyTime || 'Not specified'}</p>
-            <p><strong>Reception Time:</strong> ${bookingData.receptionTime || 'Not specified'}</p>
           </div>
 
           <div style="background-color: #e3f2fd; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
