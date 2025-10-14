@@ -228,27 +228,21 @@ export default function Packages() {
                         </div>
                       ))}
                     </div>
-                    
-                    <div className="pt-6 border-t border-border space-y-3">
-                      <Button 
-                        className="w-full" 
-                        variant={pkg.popular ? "wedding" : "outline"}
-                        size="lg"
-                        onClick={() => window.location.href = '/booking'}
-                      >
-                        Choose {pkg.name}
-                      </Button>
-                      <Button 
-                        className="w-full" 
-                        variant="ghost"
-                        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                      >
-                        Get Custom Quote
-                      </Button>
-                    </div>
                   </CardContent>
                 </Card>
               ))}
+            </div>
+
+            {/* Start Booking Button */}
+            <div className="text-center mb-16">
+              <Button 
+                variant="wedding" 
+                size="xl"
+                onClick={() => window.location.href = '/booking'}
+                className="px-12"
+              >
+                Start Booking
+              </Button>
             </div>
 
             {/* Add-ons Section */}
