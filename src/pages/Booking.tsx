@@ -7,11 +7,21 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Calendar, MapPin, Phone, Mail, Heart, Camera, Video } from "lucide-react";
 import { useState } from "react";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { Helmet } from "react-helmet-async";
+import { supabase } from "@/integrations/supabase/client";
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 export default function Booking() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
   const [formData, setFormData] = useState({
     coupleNames: "",
     email: "",
@@ -54,41 +64,63 @@ export default function Booking() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Create WhatsApp message
-    const message = `Hello! I'd like to book a wedding photography package.
+    setIsSubmitting(true);
 
-📝 Wedding Details:
-• Couple: ${formData.coupleNames}
-• Wedding Date: ${formData.weddingDate}
-• Venue: ${formData.venue}
-• Guest Count: ${formData.guestCount}
-• Ceremony Time: ${formData.ceremonyTime}
-• Reception Time: ${formData.receptionTime}
+    try {
+      const packageLabel = packages.find(p => p.value === formData.packageType)?.label || formData.packageType;
+      const addOnLabels = formData.addOns.map(addon => addOns.find(a => a.value === addon)?.label || addon);
 
-📦 Package & Add-ons:
-• Selected Package: ${packages.find(p => p.value === formData.packageType)?.label || formData.packageType}
-• Add-ons: ${formData.addOns.length > 0 ? formData.addOns.map(addon => addOns.find(a => a.value === addon)?.label).join(', ') : 'None selected'}
+      const { data, error } = await supabase.functions.invoke('send-booking-email', {
+        body: {
+          coupleNames: formData.coupleNames,
+          email: formData.email,
+          phone: formData.phone,
+          weddingDate: formData.weddingDate,
+          venue: formData.venue,
+          packageType: formData.packageType,
+          packageLabel: packageLabel,
+          addOns: addOnLabels,
+          guestCount: formData.guestCount,
+          ceremonyTime: formData.ceremonyTime,
+          receptionTime: formData.receptionTime,
+          message: formData.message,
+          hearAboutUs: formData.hearAboutUs,
+        }
+      });
 
-📞 Contact Information:
-• Email: ${formData.email}
-• Phone: ${formData.phone}
-• How they heard about us: ${formData.hearAboutUs}
+      if (error) throw error;
 
-💬 Additional Message:
-${formData.message || 'No additional message'}`;
+      // Show thank you dialog
+      setShowThankYou(true);
+      
+      // Reset form
+      setFormData({
+        coupleNames: "",
+        email: "",
+        phone: "",
+        weddingDate: "",
+        venue: "",
+        packageType: "",
+        addOns: [],
+        guestCount: "",
+        ceremonyTime: "",
+        receptionTime: "",
+        message: "",
+        hearAboutUs: ""
+      });
 
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/7047505858?text=${encodedMessage}`;
-    
-    window.open(whatsappUrl, '_blank');
-    
-    toast({
-      title: "Booking Request Sent!",
-      description: "Your WhatsApp message has been opened. Please send it to complete your booking request.",
-    });
+    } catch (error: any) {
+      console.error("Error sending booking request:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send booking request. Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -327,11 +359,17 @@ ${formData.message || 'No additional message'}`;
 
                   {/* Submit Button */}
                   <div className="pt-6 border-t border-border">
-                    <Button type="submit" className="w-full" variant="wedding" size="lg">
-                      Send Booking Request via WhatsApp
+                    <Button 
+                      type="submit" 
+                      className="w-full" 
+                      variant="wedding" 
+                      size="lg"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? "Sending..." : "Send Booking Request"}
                     </Button>
                     <p className="text-sm text-muted-foreground text-center mt-4">
-                      We'll respond within 24 hours with a personalized quote and consultation scheduling
+                      We'll respond within 24-48 hours with a personalized quote and consultation scheduling
                     </p>
                   </div>
                 </form>
@@ -377,6 +415,41 @@ ${formData.message || 'No additional message'}`;
           </div>
         </div>
       </div>
+
+      {/* Thank You Dialog */}
+      <AlertDialog open={showThankYou} onOpenChange={setShowThankYou}>
+        <AlertDialogContent className="max-w-md">
+          <AlertDialogHeader>
+            <div className="flex justify-center mb-4">
+              <div className="p-4 rounded-full bg-primary-soft">
+                <Heart className="w-12 h-12 text-primary" />
+              </div>
+            </div>
+            <AlertDialogTitle className="text-center text-2xl">
+              Thank You!
+            </AlertDialogTitle>
+            <AlertDialogDescription className="text-center text-base space-y-3">
+              <p className="font-semibold text-foreground">
+                Your booking request has been sent successfully!
+              </p>
+              <p>
+                We will get back to you within 24-48 hours with a personalized quote and to schedule your consultation.
+              </p>
+              <p className="text-sm pt-2">
+                If you have any urgent questions, feel free to call us at{" "}
+                <a href="tel:7047505858" className="text-primary hover:underline font-medium">
+                  (704) 750-5858
+                </a>
+              </p>
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <div className="flex justify-center pt-4">
+            <Button onClick={() => setShowThankYou(false)} variant="wedding">
+              Close
+            </Button>
+          </div>
+        </AlertDialogContent>
+      </AlertDialog>
     </>
   );
 }
