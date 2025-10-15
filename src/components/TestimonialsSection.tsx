@@ -63,11 +63,23 @@ export const TestimonialsSection = () => {
 
         {/* Zola Badge */}
         <div className="text-center mt-12">
-          <div className="inline-flex items-center gap-3 bg-card/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-soft">
-            <Star className="w-5 h-5 text-gold fill-gold" />
-            <span className="text-sm font-medium">Featured Vendor on Zola</span>
-            <span className="text-xs text-muted-foreground">• Premium Wedding Directory</span>
-          </div>
+          <a 
+            href="https://www.zola.com/wedding-vendors/wedding-photographers/big-day-story-carolinas--2?utm_source=vendor&utm_medium=various&utm_content=badge"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <div className="inline-flex items-center gap-3 bg-card/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-soft hover:shadow-elegant transition-smooth border border-primary/20 hover:border-primary/40">
+              <div className="flex items-center gap-2">
+                <Star className="w-5 h-5 text-gold fill-gold" />
+                <span className="text-xl font-bold text-primary">5.0</span>
+              </div>
+              <div className="border-l border-border pl-3">
+                <div className="text-sm font-semibold text-foreground">Featured Vendor on Zola</div>
+                <div className="text-xs text-muted-foreground">13 Reviews • Premium Wedding Directory</div>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
