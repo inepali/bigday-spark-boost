@@ -84,13 +84,6 @@ const Header = () => {
                 <Mail className="h-5 w-5" />
               </a>
             </div>
-
-            {/* CTA Button - Hidden on small screens */}
-            <Link to="/booking" className="hidden lg:block">
-              <Button variant="gold" size="sm" className="font-serif">
-                Book Now
-              </Button>
-            </Link>
           </div>
         </div>
 
