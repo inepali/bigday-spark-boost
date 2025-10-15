@@ -61,8 +61,31 @@ export const TestimonialsSection = () => {
           ))}
         </div>
 
-        {/* Zola Badge */}
-        <div className="text-center mt-12">
+        {/* Review Badges */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
+          {/* Google Reviews Badge */}
+          <a 
+            href="https://share.google/i7J7nZiL4Z5r8T5lE"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <div className="inline-flex items-center gap-3 bg-card/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-soft hover:shadow-elegant transition-smooth border border-primary/20 hover:border-primary/40">
+              <div className="flex items-center gap-2">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-gold fill-gold" />
+                  ))}
+                </div>
+              </div>
+              <div className="border-l border-border pl-3">
+                <div className="text-sm font-semibold text-foreground">Google Reviews</div>
+                <div className="text-xs text-muted-foreground">5.0 Rating • Verified Reviews</div>
+              </div>
+            </div>
+          </a>
+
+          {/* Zola Badge */}
           <a 
             href="https://www.zola.com/wedding-vendors/wedding-photographers/big-day-story-carolinas--2?utm_source=vendor&utm_medium=various&utm_content=badge"
             target="_blank"
