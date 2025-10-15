@@ -7,6 +7,16 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Calendar, Facebook, Instagram, Youtube } from "lucide-react";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
@@ -31,6 +41,7 @@ export const ContactSection = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Partial<Record<keyof ContactForm, string>>>({});
+  const [showThankYou, setShowThankYou] = useState(false);
 
   const handleInputChange = (field: keyof ContactForm, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -74,30 +85,21 @@ export const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      // Create a properly encoded WhatsApp message
-      const message = `Hello Big Day Story Carolinas! I'm interested in your wedding photography services.
-
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-${formData.weddingDate ? `Wedding Date: ${formData.weddingDate}` : ''}
-${formData.venue ? `Venue: ${formData.venue}` : ''}
-
-Message: ${formData.message}
-
-Please contact me to discuss availability and pricing. Thank you!`;
-
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/17047505858?text=${encodedMessage}`;
-      
-      // Open WhatsApp in a new tab
-      window.open(whatsappUrl, '_blank');
-      
-      toast({
-        title: "Message Prepared!",
-        description: "WhatsApp is opening with your message ready to send.",
+      const { data, error } = await supabase.functions.invoke('send-quote-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          weddingDate: formData.weddingDate,
+          venue: formData.venue,
+          message: formData.message,
+        },
       });
 
+      if (error) throw error;
+
+      setShowThankYou(true);
+      
       // Reset form
       setFormData({
         name: "",
@@ -108,6 +110,7 @@ Please contact me to discuss availability and pricing. Thank you!`;
         message: "",
       });
     } catch (error) {
+      console.error('Error submitting quote:', error);
       toast({
         title: "Something went wrong",
         description: "Please try contacting us directly via phone or email.",
@@ -262,11 +265,11 @@ Please contact me to discuss availability and pricing. Thank you!`;
                   className="w-full"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Preparing Message..." : "Send Message via WhatsApp"}
+                  {isSubmitting ? "Sending..." : "Get Your Free Quote"}
                 </Button>
                 
                 <p className="text-xs text-muted-foreground text-center">
-                  By submitting, you agree to be contacted via WhatsApp or phone about your wedding photography needs.
+                  By submitting, you agree to be contacted via email or phone about your wedding photography needs.
                 </p>
               </form>
             </CardContent>
@@ -352,6 +355,22 @@ Please contact me to discuss availability and pricing. Thank you!`;
           </div>
         </div>
       </div>
+
+      {/* Thank You Dialog */}
+      <AlertDialog open={showThankYou} onOpenChange={setShowThankYou}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Thank You for Your Interest! 🎉</AlertDialogTitle>
+            <AlertDialogDescription>
+              We've received your quote request and will get back to you within 24 hours. 
+              We're excited to learn more about your wedding day and how we can capture your special moments!
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction>Close</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </section>
   );
 };
