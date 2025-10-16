@@ -12,6 +12,16 @@ export const TestimonialsSection = () => {
       name: "Kathy Leng",
       review: "My now husband and I worked with Bipin and Sanjay from Big Day Story on the day of our wedding. They were wonderful and very accommodating. They captured every moment and captured it beautifully. We would definitely recommend to friends and family as well as anyone else. They are very dedicated to their work and are willing to do anything to make your day wonderful and special. Very grateful to have them a part of our big day.",
       rating: 5
+    },
+    {
+      name: "Jessica J.",
+      review: "From the moment we booked Big Day Story Photography, Sanjay and his team were quick to respond, knowledgeable, and incredibly helpful. Their professional and personable approach put us at ease throughout the entire wedding planning process. On the day of our wedding, Sanjay blended seamlessly with our wedding party, helping us finalize the detailed timeline and providing excellent direction for all of our posed photos despite the chilly weather. We highly recommend Big Day Story Photography to any couple looking for a talented, personable, and hardworking photography team.",
+      rating: 5
+    },
+    {
+      name: "Emily S.",
+      review: "We had a wonderful experience working with Bipin and Sanjay from Big Day Story for Photo & Video for our wedding. They did a great job capturing the special moments of our big day and delivered a beautiful album to us in under a month. Big Day Story felt like a member of the family on our wedding day, and the photos reflect the joy and love that filled the event. We couldn't be happier that we chose Big Day Story to document memories we will cherish for a lifetime.",
+      rating: 5
     }
   ];
 
