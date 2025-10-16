@@ -82,7 +82,7 @@ const handler = async (req: Request): Promise<Response> => {
               </div>
               
               <div class="footer">
-                <p>This quote request was submitted through Big Day Story Carolinas website.</p>
+                <p>This quote request was submitted through Big Day Story website.</p>
               </div>
             </div>
           </div>
@@ -91,8 +91,8 @@ const handler = async (req: Request): Promise<Response> => {
     `;
 
     const emailResponse = await resend.emails.send({
-      from: "Big Day Story Carolinas <onboarding@resend.dev>",
-      to: ["info@bigdaystorycarolinas.com"],
+      from: "Big Day Story <onboarding@resend.dev>",
+      to: ["info@bigdaystory.com"],
       replyTo: email,
       subject: `New Quote Request from ${name}`,
       html: emailHtml,

@@ -37,12 +37,12 @@ export const AboutSection = () => {
           <div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Why Choose
-              <span className="block text-primary">Big Day Story Carolinas?</span>
+              <span className="block text-primary">Big Day Story?</span>
             </h2>
             
             <div className="space-y-6 text-muted-foreground">
               <p className="text-lg leading-relaxed">
-                At Big Day Story Carolinas, we believe every wedding is a <strong>unique narrative waiting to be told</strong>. 
+                At Big Day Story, we believe every wedding is a <strong>unique narrative waiting to be told</strong>.
                 As experienced wedding photographers and videographers based in Charlotte, NC, our mission is to 
                 encapsulate the essence of your special day through stunning visuals that resonate with authenticity and grace.
               </p>

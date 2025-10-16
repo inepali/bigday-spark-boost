@@ -14,12 +14,12 @@ const Index = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "@id": "https://bigdaystorycarolinas.com",
-            "name": "Big Day Story Carolinas",
+            "@id": "https://bigdaystory.com",
+            "name": "Big Day Story",
             "description": "Premier wedding photographers and videographers in Charlotte, NC. Capturing timeless moments with elegance & emotion.",
-            "url": "https://bigdaystorycarolinas.com",
+            "url": "https://bigdaystory.com",
             "telephone": "+1-704-750-5858",
-            "email": "info@bigdaystorycarolinas.com",
+            "email": "info@bigdaystory.com",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Charlotte",
@@ -101,12 +101,12 @@ const Index = () => {
       <footer className="bg-primary text-primary-foreground py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4">
-            <div className="text-2xl font-bold">Big Day Story Carolinas</div>
+            <div className="text-2xl font-bold">Big Day Story</div>
             <p className="text-primary-foreground/80">
               Crafting your perfect wedding experience together.
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-sm">
-              <span>© 2025 Big Day Story Carolinas. All rights reserved.</span>
+              <span>© 2025 Big Day Story. All rights reserved.</span>
               <span className="hidden sm:inline">•</span>
               <a 
                 href="tel:7047505858" 
@@ -116,10 +116,10 @@ const Index = () => {
               </a>
               <span className="hidden sm:inline">•</span>
               <a 
-                href="mailto:info@bigdaystorycarolinas.com"
+                href="mailto:info@bigdaystory.com"
                 className="hover:text-gold transition-smooth"
               >
-                info@bigdaystorycarolinas.com
+                info@bigdaystory.com
               </a>
             </div>
           </div>

@@ -136,20 +136,20 @@ export default function Packages() {
   return (
     <>
       <Helmet>
-        <title>Wedding Photography Packages Charlotte NC | Big Day Story Carolinas</title>
+        <title>Wedding Photography Packages Charlotte NC | Big Day Story</title>
         <meta name="description" content="Professional wedding photography and videography packages in Charlotte, NC. From $1,000 - $2,900. Diamond, Gold & Platinum packages with engagement sessions included." />
         <meta name="keywords" content="wedding photography packages Charlotte NC, wedding videography pricing, Charlotte wedding photographer packages, affordable wedding photography" />
         <link rel="canonical" href="/packages" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Wedding Photography Packages Charlotte NC | Big Day Story Carolinas" />
+        <meta property="og:title" content="Wedding Photography Packages Charlotte NC | Big Day Story" />
         <meta property="og:description" content="Professional wedding photography and videography packages in Charlotte, NC. From $1,000 - $2,900. Diamond, Gold & Platinum packages with engagement sessions included." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="/packages" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Wedding Photography Packages Charlotte NC | Big Day Story Carolinas" />
+        <meta name="twitter:title" content="Wedding Photography Packages Charlotte NC | Big Day Story" />
         <meta name="twitter:description" content="Professional wedding photography and videography packages in Charlotte, NC. From $1,000 - $2,900. Diamond, Gold & Platinum packages with engagement sessions included." />
         
         {/* Schema.org structured data */}
@@ -160,7 +160,7 @@ export default function Packages() {
             "name": "Wedding Photography Packages",
             "provider": {
               "@type": "LocalBusiness",
-              "name": "Big Day Story Carolinas",
+              "name": "Big Day Story",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Charlotte",
@@ -187,7 +187,7 @@ export default function Packages() {
               <span className="block text-primary">Packages</span>
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              At Big Day Story Carolinas, we believe your wedding day deserves more than just documentation—it deserves to be told like the unforgettable story it is. Our affordable wedding photo and video packages are thoughtfully crafted to capture every cherished moment.
+              At Big Day Story, we believe your wedding day deserves more than just documentation—it deserves to be told like the unforgettable story it is. Our affordable wedding photo and video packages are thoughtfully crafted to capture every cherished moment.
             </p>
           </div>
         </section>

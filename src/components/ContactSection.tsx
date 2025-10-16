@@ -131,8 +131,8 @@ export const ContactSection = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       label: "Email", 
-      value: "info@bigdaystorycarolinas.com",
-      href: "mailto:info@bigdaystorycarolinas.com"
+      value: "info@bigdaystory.com",
+      href: "mailto:info@bigdaystory.com"
     },
     {
       icon: <MapPin className="w-5 h-5" />,

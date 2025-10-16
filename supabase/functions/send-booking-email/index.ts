@@ -66,7 +66,7 @@ const handler = async (req: Request): Promise<Response> => {
           ` : ''}
 
           <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #e0e0e0; text-align: center; color: #666;">
-            <p>This booking request was submitted via Big Day Story Carolinas website</p>
+            <p>This booking request was submitted via Big Day Story website</p>
           </div>
         </div>
       </div>

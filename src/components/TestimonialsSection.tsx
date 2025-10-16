@@ -5,12 +5,12 @@ export const TestimonialsSection = () => {
   const testimonials = [
     {
       name: "Sruti Hall",
-      review: "We had a beautiful day for a wedding. Bipin and Sanjay from Big Day Story Carolinas captured our memories beautifully. Their professionalism and patience with us was appreciated. It was my oldest daughter's wedding, and I had no idea what I was doing. They guided us through the process. The sneak peek was sent out quickly so we had a preview of what to expect. The video captured moments I had missed and had me tearing up all over again.",
+      review: "We had a beautiful day for a wedding. Bipin and Sanjay from Big Day Story captured our memories beautifully. Their professionalism and patience with us was appreciated. It was my oldest daughter's wedding, and I had no idea what I was doing. They guided us through the process. The sneak peek was sent out quickly so we had a preview of what to expect. The video captured moments I had missed and had me tearing up all over again.",
       rating: 5
     },
     {
       name: "Kathy Leng",
-      review: "My now husband and I worked with Bipin and Sanjay from Big Day Story Carolinas on the day of our wedding. They were wonderful and very accommodating. They captured every moment and captured it beautifully. We would definitely recommend to friends and family as well as anyone else. They are very dedicated to their work and are willing to do anything to make your day wonderful and special. Very grateful to have them a part of our big day.",
+      review: "My now husband and I worked with Bipin and Sanjay from Big Day Story on the day of our wedding. They were wonderful and very accommodating. They captured every moment and captured it beautifully. We would definitely recommend to friends and family as well as anyone else. They are very dedicated to their work and are willing to do anything to make your day wonderful and special. Very grateful to have them a part of our big day.",
       rating: 5
     }
   ];

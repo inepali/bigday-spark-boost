@@ -120,20 +120,20 @@ export default function Booking() {
   return (
     <>
       <Helmet>
-        <title>Book Wedding Photographer Charlotte NC | Big Day Story Carolinas</title>
+        <title>Book Wedding Photographer Charlotte NC | Big Day Story</title>
         <meta name="description" content="Book your wedding photographer in Charlotte, NC. Easy online booking for professional wedding photography and videography services. Packages from $1,000 - $2,900." />
         <meta name="keywords" content="book wedding photographer Charlotte NC, wedding photography booking, Charlotte wedding videographer booking, wedding photographer consultation" />
         <link rel="canonical" href="/booking" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Book Wedding Photographer Charlotte NC | Big Day Story Carolinas" />
+        <meta property="og:title" content="Book Wedding Photographer Charlotte NC | Big Day Story" />
         <meta property="og:description" content="Book your wedding photographer in Charlotte, NC. Easy online booking for professional wedding photography and videography services. Packages from $1,000 - $2,900." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="/booking" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Book Wedding Photographer Charlotte NC | Big Day Story Carolinas" />
+        <meta name="twitter:title" content="Book Wedding Photographer Charlotte NC | Big Day Story" />
         <meta name="twitter:description" content="Book your wedding photographer in Charlotte, NC. Easy online booking for professional wedding photography and videography services. Packages from $1,000 - $2,900." />
         
         {/* Schema.org structured data */}
@@ -145,7 +145,7 @@ export default function Booking() {
             "description": "Book professional wedding photography and videography services in Charlotte, NC",
             "provider": {
               "@type": "LocalBusiness",
-              "name": "Big Day Story Carolinas",
+              "name": "Big Day Story",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Charlotte",
@@ -369,8 +369,8 @@ export default function Booking() {
                   <Mail className="w-8 h-8 text-primary mx-auto mb-4" />
                   <h3 className="font-semibold mb-2">Email Us</h3>
                   <p className="text-sm text-muted-foreground">
-                    <a href="mailto:info@bigdaystorycarolinas.com" className="hover:text-primary transition-colors">
-                      info@bigdaystorycarolinas.com
+                    <a href="mailto:info@bigdaystory.com" className="hover:text-primary transition-colors">
+                      info@bigdaystory.com
                     </a>
                   </p>
                 </CardContent>

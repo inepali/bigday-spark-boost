@@ -23,7 +23,7 @@ const Header = () => {
           <Link to="/" className="flex items-center group">
             <img 
               src={logo} 
-              alt="Big Day Story Carolinas - Wedding Photography" 
+              alt="Big Day Story - Wedding Photography"
               className="h-12 w-auto transition-transform group-hover:scale-105"
             />
           </Link>
@@ -77,7 +77,7 @@ const Header = () => {
                 <Instagram className="h-5 w-5" />
               </a>
               <a 
-                href="mailto:bigdaystorycarolinas@gmail.com"
+                href="mailto:info@bigdaystory.com"
                 className="p-2 text-muted-foreground hover:text-primary transition-colors rounded-full hover:bg-accent"
                 aria-label="Email us"
               >

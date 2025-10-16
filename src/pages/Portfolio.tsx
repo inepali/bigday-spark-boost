@@ -220,13 +220,13 @@ const Portfolio = () => {
   return (
     <>
       <Helmet>
-        <title>Wedding Photographer Portfolio | Big Day Story Carolinas</title>
+        <title>Wedding Photographer Portfolio | Big Day Story</title>
         <meta name="description" content="Browse our stunning wedding photography portfolio showcasing beautiful moments from North Carolina weddings. Professional candid and posed wedding photos." />
         <meta name="keywords" content="wedding photography portfolio, North Carolina wedding photographer, wedding photos, bridal photography, professional wedding photographer" />
         <link rel="canonical" href="/portfolio" />
         
         {/* Open Graph tags */}
-        <meta property="og:title" content="Wedding Photographer Portfolio | Big Day Story Carolinas" />
+        <meta property="og:title" content="Wedding Photographer Portfolio | Big Day Story" />
         <meta property="og:description" content="Browse our stunning wedding photography portfolio showcasing beautiful moments from North Carolina weddings." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="/portfolio" />
@@ -240,8 +240,8 @@ const Portfolio = () => {
             "description": "Professional wedding photography portfolio showcasing beautiful moments from North Carolina weddings",
             "provider": {
               "@type": "Organization",
-              "name": "Big Day Story Carolinas",
-              "url": "https://bigdaystorycarolinas.com"
+              "name": "Big Day Story",
+              "url": "https://bigdaystory.com"
             }
           })}
         </script>

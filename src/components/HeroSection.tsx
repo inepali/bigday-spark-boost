@@ -8,7 +8,7 @@ export const HeroSection = () => {
       <div className="absolute inset-0">
         <img 
           src={heroImage} 
-          alt="Elegant wedding couple in romantic moment - Big Day Story Carolinas Wedding Photography"
+          alt="Elegant wedding couple in romantic moment - Big Day Story Wedding Photography"
           className="w-full h-full object-cover"
           loading="eager"
         />
