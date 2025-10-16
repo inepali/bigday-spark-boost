@@ -308,10 +308,7 @@ export const ContactSection = () => {
 
             {/* Social Media */}
             <Card className="shadow-soft border-0 bg-card/80 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-xl font-bold">Follow Our Work</CardTitle>
-              </CardHeader>
-              <CardContent>
+              <CardContent className="pt-6">
                 <div className="flex gap-4">
                   {socialLinks.map((social, index) => (
                     <a
