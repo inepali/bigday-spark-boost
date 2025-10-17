@@ -129,7 +129,7 @@ export const ServicesSection = () => {
                     size="lg"
                     onClick={() => navigate('/packages')}
                   >
-                    View Packages
+                    View More Packages
                   </Button>
                   <Button 
                     variant="outline" 
