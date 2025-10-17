@@ -73,7 +73,7 @@ const handler = async (req: Request): Promise<Response> => {
     `;
 
     const emailResponse = await resend.emails.send({
-      from: "Big Day Story Booking <onboarding@resend.dev>",
+      from: "Big Day Story <hello@bigdaystory.com>",
       to: ["info@bigdaystory.com"],
       replyTo: bookingData.email,
       subject: `New Wedding Booking: ${bookingData.coupleNames} - ${bookingData.weddingDate}`,
