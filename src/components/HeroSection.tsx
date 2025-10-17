@@ -1,14 +1,17 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-wedding.jpg";
+import { useLocation } from "@/hooks/useLocation";
 
 export const HeroSection = () => {
+  const location = useLocation();
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 
           src={heroImage} 
-          alt="Elegant wedding couple in romantic moment - Big Day Story Wedding Photography"
+          alt={`Elegant wedding couple in romantic moment - Big Day Story Wedding Photography in ${location.fullName}`}
           className="w-full h-full object-cover"
           loading="eager"
         />
@@ -21,7 +24,7 @@ export const HeroSection = () => {
           Premier Wedding
           <span className="block text-gold"> Photographers</span>
           <span className="block text-2xl sm:text-3xl lg:text-4xl font-medium mt-2">
-            in Charlotte, NC
+            in {location.fullName}
           </span>
         </h1>
         
@@ -62,7 +65,7 @@ export const HeroSection = () => {
           </div>
           <div className="flex items-center gap-2">
             <span className="text-gold">📍</span>
-            <span>Charlotte, NC & Carolinas</span>
+            <span>{location.areaDescription}</span>
           </div>
         </div>
       </div>
