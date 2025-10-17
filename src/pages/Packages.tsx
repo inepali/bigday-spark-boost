@@ -12,6 +12,7 @@ export default function Packages() {
       photoVideoOnly: "$1,000",
       duration: "4 hours",
       popular: false,
+      dj:"$1200",
       features: [
         "Some Ceremony Photos",
         "Ceremony Coverage",
@@ -36,6 +37,7 @@ export default function Packages() {
       photoVideoOnly: "$1,400",
       duration: "6 hours",
       popular: true,
+      dj:"$1600",
       features: [
         "Pre Ceremony Photos",
         "Full Ceremony Coverage",
@@ -61,6 +63,7 @@ export default function Packages() {
       photoVideoOnly: "$1,700",
       duration: "8 hours",
       popular: false,
+      dj:"$1800",
       features: [
         "Pre Ceremony Photos",
         "Full Ceremony Coverage",
@@ -116,7 +119,7 @@ export default function Packages() {
     {
       name: "Additional Photographer",
       description: "Add second shooter for better coverage during ceremony and reception",
-      price: "from $500",
+      price: "$125/hour",
       icon: <Users className="w-6 h-6" />
     },
     {
@@ -213,6 +216,8 @@ export default function Packages() {
                       <div className="text-sm text-muted-foreground">Photo & Video Bundle</div>
                       <div className="text-lg font-semibold text-primary mt-2">{pkg.photoVideoOnly}</div>
                       <div className="text-sm text-muted-foreground">Photo or Video Only</div>
+                      <div className="text-lg font-semibold text-primary mt-2">{pkg.dj}</div>
+                      <div className="text-sm text-muted-foreground">DJ & Sound</div>
                     </div>
                     <CardDescription className="text-lg font-medium">
                       {pkg.duration} of professional coverage
@@ -304,6 +309,7 @@ export default function Packages() {
           </div>
         </section>
       </div>
+
     </>
   );
 }

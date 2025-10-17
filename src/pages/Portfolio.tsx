@@ -210,10 +210,6 @@ const Portfolio = () => {
     {
       src: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=800,h=800,fit=crop/dJo6WXrDBJH0xnOO/cheyenne-benjamin-285-YD0B5x3xRWF26vqN.JPG",
       alt: "Candid Wedding Photography North Carolina"
-    },
-    {
-      src: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=800,h=800,fit=crop/dJo6WXrDBJH0xnOO/cheyenne-benjamin-699-YanqaPNXOlU3PzZ8.JPG",
-      alt: "Destination Wedding Photography Carolinas"
     }
   ];
 
@@ -326,6 +322,7 @@ const Portfolio = () => {
           </div>
         </section>
       </main>
+
     </>
   );
 };
