@@ -13,6 +13,10 @@ import Blog from "./pages/Blog";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
+import SnowKissedSpringWedding from "./pages/blog/SnowKissedSpringWedding";
+import BethanyAlexWedding from "./pages/blog/BethanyAlexWedding";
+import PerfectDayGreer from "./pages/blog/PerfectDayGreer";
+import UltimateGuideCharlotte from "./pages/blog/UltimateGuideCharlotte";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +35,10 @@ const App = () => (
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/snow-kissed-spring-wedding-white-crow" element={<SnowKissedSpringWedding />} />
+            <Route path="/blog/bethany-alex-wedding-day" element={<BethanyAlexWedding />} />
+            <Route path="/blog/perfect-day-greer-capturing-love" element={<PerfectDayGreer />} />
+            <Route path="/blog/ultimate-guide-wedding-photography-charlotte" element={<UltimateGuideCharlotte />} />
             <Route path="/faq" element={<FAQ />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

@@ -9,57 +9,103 @@ const Blog = () => {
   const blogPosts = [
     {
       id: 1,
+      title: "A Snow-Kissed Spring Wedding at White Crow | Jessica + Marquiest",
+      excerpt: "Experience a magical mountain wedding at The White Crow in Banner Elk, NC. Perched at 3,700 feet with 360° views of snow-capped peaks, this wedding was pure mountain magic.",
+      date: "2025-04-14",
+      author: "Sanjay, Photographer",
+      image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
+      keywords: "White Crow wedding, Banner Elk wedding photography, mountain wedding North Carolina",
+      slug: "snow-kissed-spring-wedding-white-crow"
+    },
+    {
+      id: 2,
+      title: "Bethany & Alex's Beautiful Wedding Day",
+      excerpt: "Full of love, laughter, and memorable moments - from unexpected ceremony twists to an epic fireball send-off. Discover this unforgettable Charlotte wedding celebration.",
+      date: "2025-03-09",
+      author: "Sanjay Ghimire",
+      image: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=80",
+      keywords: "Charlotte wedding videography, cold spark wedding send-off, wedding reception Charlotte",
+      slug: "bethany-alex-wedding-day"
+    },
+    {
+      id: 3,
+      title: "A Perfect Day in Greer: Capturing Love",
+      excerpt: "Journey to Greer, South Carolina for a stunning destination wedding. Professional videographers and photographers work seamlessly to create timeless memories at Oak Grove Baptist Church.",
+      date: "2025-01-27",
+      author: "Sanjay Ghimire, Videographer",
+      image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80",
+      keywords: "Greer SC wedding photography, destination wedding Carolinas, Oak Grove Baptist Church",
+      slug: "perfect-day-greer-capturing-love"
+    },
+    {
+      id: 4,
+      title: "Capturing Love: The Ultimate Guide to Wedding Photography in Charlotte, NC",
+      excerpt: "Your comprehensive guide to wedding photography in Charlotte. Discover top venues, photography styles, expert tips for choosing photographers, and everything you need to know.",
+      date: "2025-01-27",
+      author: "Sanjay Ghimire",
+      image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
+      keywords: "Charlotte wedding photography guide, wedding venues Charlotte NC, wedding photography styles",
+      slug: "ultimate-guide-wedding-photography-charlotte"
+    },
+    {
+      id: 5,
       title: "10 Essential Tips for Your Perfect Wedding Day Timeline",
       excerpt: "Planning your wedding day timeline can feel overwhelming. Discover expert tips from professional wedding photographers on creating a stress-free schedule that captures every precious moment.",
       date: "2025-10-15",
       author: "Big Day Story Team",
       image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
-      keywords: "wedding day timeline, wedding planning tips, wedding photography schedule"
+      keywords: "wedding day timeline, wedding planning tips, wedding photography schedule",
+      slug: "wedding-day-timeline-tips"
     },
     {
-      id: 2,
+      id: 6,
       title: "Engagement Photo Ideas: Making Your Love Story Shine",
       excerpt: "From scenic outdoor locations to intimate indoor sessions, explore creative engagement photography ideas that perfectly capture your unique love story in the Carolinas.",
       date: "2025-10-10",
       author: "Big Day Story Team",
       image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80",
-      keywords: "engagement photos, engagement photography ideas, couple photography"
+      keywords: "engagement photos, engagement photography ideas, couple photography",
+      slug: "engagement-photo-ideas"
     },
     {
-      id: 3,
+      id: 7,
       title: "Why Wedding Videography is Worth the Investment",
       excerpt: "Relive your special day forever with cinematic wedding videography. Learn why couples are choosing video to complement their wedding photography packages.",
       date: "2025-10-05",
       author: "Big Day Story Team",
       image: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=80",
-      keywords: "wedding videography, wedding video investment, cinematic wedding films"
+      keywords: "wedding videography, wedding video investment, cinematic wedding films",
+      slug: "wedding-videography-investment"
     },
     {
-      id: 4,
+      id: 8,
       title: "Best Wedding Venues in North Carolina: A Photographer's Guide",
       excerpt: `Discover stunning wedding venues across ${location.city} and North Carolina that photograph beautifully. From mountain views to elegant ballrooms, find your perfect backdrop.`,
       date: "2025-09-28",
       author: "Big Day Story Team",
       image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80",
-      keywords: `wedding venues ${location.city}, North Carolina wedding locations, outdoor wedding venues`
+      keywords: `wedding venues ${location.city}, North Carolina wedding locations, outdoor wedding venues`,
+      slug: "best-wedding-venues-north-carolina"
     },
     {
-      id: 5,
+      id: 9,
       title: "Bridal Portrait Session: What to Expect and How to Prepare",
       excerpt: "Your bridal session is a special opportunity to capture stunning portraits. Learn how to prepare, what to bring, and tips for looking your absolute best.",
       date: "2025-09-20",
       author: "Big Day Story Team",
       image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800&q=80",
-      keywords: "bridal portraits, bridal session tips, wedding photography preparation"
+      keywords: "bridal portraits, bridal session tips, wedding photography preparation",
+      slug: "bridal-portrait-session-tips"
     },
     {
-      id: 6,
+      id: 10,
       title: "Drone Wedding Photography: Elevating Your Wedding Memories",
       excerpt: "Aerial wedding photography adds a breathtaking dimension to your wedding album. Discover how drone videography captures your venue's beauty from stunning new angles.",
       date: "2025-09-15",
       author: "Big Day Story Team",
       image: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&q=80",
-      keywords: "drone wedding photography, aerial wedding videography, wedding drone shots"
+      keywords: "drone wedding photography, aerial wedding videography, wedding drone shots",
+      slug: "drone-wedding-photography"
     }
   ];
 
@@ -145,9 +191,15 @@ const Blog = () => {
                     <h2 className="font-serif text-2xl font-bold mb-3 text-foreground hover:text-primary transition-colors">
                       {post.title}
                     </h2>
-                    <p className="text-muted-foreground line-clamp-3">
+                    <p className="text-muted-foreground line-clamp-3 mb-4">
                       {post.excerpt}
                     </p>
+                    <a
+                      href={`/blog/${post.slug}`}
+                      className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
+                    >
+                      Read More →
+                    </a>
                   </div>
                 </Card>
               ))}
