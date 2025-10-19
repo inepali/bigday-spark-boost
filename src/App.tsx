@@ -17,6 +17,9 @@ import SnowKissedSpringWedding from "./pages/blog/SnowKissedSpringWedding";
 import BethanyAlexWedding from "./pages/blog/BethanyAlexWedding";
 import PerfectDayGreer from "./pages/blog/PerfectDayGreer";
 import UltimateGuideCharlotte from "./pages/blog/UltimateGuideCharlotte";
+import ChoosingPhotographer from "./pages/blog/ChoosingPhotographer";
+import TopVenuesCarolinas from "./pages/blog/TopVenuesCarolinas";
+import WeddingTrends2025 from "./pages/blog/WeddingTrends2025";
 
 const queryClient = new QueryClient();
 
@@ -35,10 +38,13 @@ const App = () => (
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/snow-kissed-spring-wedding-white-crow" element={<SnowKissedSpringWedding />} />
-            <Route path="/blog/bethany-alex-wedding-day" element={<BethanyAlexWedding />} />
-            <Route path="/blog/perfect-day-greer-capturing-love" element={<PerfectDayGreer />} />
-            <Route path="/blog/ultimate-guide-wedding-photography-charlotte" element={<UltimateGuideCharlotte />} />
+          <Route path="/blog/snow-kissed-spring-wedding-white-crow" element={<SnowKissedSpringWedding />} />
+          <Route path="/blog/bethany-alex-wedding-day" element={<BethanyAlexWedding />} />
+          <Route path="/blog/perfect-day-greer-capturing-love" element={<PerfectDayGreer />} />
+          <Route path="/blog/ultimate-guide-wedding-photography-charlotte" element={<UltimateGuideCharlotte />} />
+          <Route path="/blog/choosing-perfect-wedding-photographer-nc" element={<ChoosingPhotographer />} />
+          <Route path="/blog/top-wedding-venues-carolinas" element={<TopVenuesCarolinas />} />
+          <Route path="/blog/wedding-photography-trends-2025" element={<WeddingTrends2025 />} />
             <Route path="/faq" element={<FAQ />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
