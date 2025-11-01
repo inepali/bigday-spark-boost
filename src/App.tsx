@@ -20,6 +20,11 @@ import UltimateGuideCharlotte from "./pages/blog/UltimateGuideCharlotte";
 import ChoosingPhotographer from "./pages/blog/ChoosingPhotographer";
 import TopVenuesCarolinas from "./pages/blog/TopVenuesCarolinas";
 import WeddingTrends2025 from "./pages/blog/WeddingTrends2025";
+import WeddingDayTimeline from "./pages/blog/WeddingDayTimeline";
+import EngagementPhotoIdeas from "./pages/blog/EngagementPhotoIdeas";
+import WeddingVideographyInvestment from "./pages/blog/WeddingVideographyInvestment";
+import BridalPortraitSession from "./pages/blog/BridalPortraitSession";
+import DroneWeddingPhotography from "./pages/blog/DroneWeddingPhotography";
 
 const queryClient = new QueryClient();
 
