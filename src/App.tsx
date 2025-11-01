@@ -50,6 +50,10 @@ const App = () => (
           <Route path="/blog/choosing-perfect-wedding-photographer-nc" element={<ChoosingPhotographer />} />
           <Route path="/blog/top-wedding-venues-carolinas" element={<TopVenuesCarolinas />} />
           <Route path="/blog/wedding-photography-trends-2025" element={<WeddingTrends2025 />} />
+          <Route path="/blog/wedding-day-timeline-tips" element={<WeddingDayTimeline />} />
+          <Route path="/blog/engagement-photo-ideas" element={<EngagementPhotoIdeas />} />
+          <Route path="/blog/wedding-videography-investment" element={<WeddingVideographyInvestment />} />
+          <Route path="/blog/bridal-portrait-session-tips" element={<BridalPortraitSession />} />
           <Route path="/blog/drone-wedding-photography" element={<DroneWeddingPhotography />} />
             <Route path="/faq" element={<FAQ />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
