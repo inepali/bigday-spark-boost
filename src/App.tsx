@@ -50,6 +50,7 @@ const App = () => (
           <Route path="/blog/choosing-perfect-wedding-photographer-nc" element={<ChoosingPhotographer />} />
           <Route path="/blog/top-wedding-venues-carolinas" element={<TopVenuesCarolinas />} />
           <Route path="/blog/wedding-photography-trends-2025" element={<WeddingTrends2025 />} />
+          <Route path="/blog/drone-wedding-photography" element={<DroneWeddingPhotography />} />
             <Route path="/faq" element={<FAQ />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
