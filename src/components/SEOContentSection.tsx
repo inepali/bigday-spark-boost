@@ -4,8 +4,8 @@ export const SEOContentSection = () => {
   const location = useLocation();
   
   return (
-    <section className="py-16 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <section className="py-20 bg-muted/30">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <article className="prose prose-lg max-w-none">
           <h2 className="text-3xl font-bold text-foreground mb-6">
             Professional Wedding Photography & Videography in {location.fullName}
