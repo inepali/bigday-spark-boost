@@ -77,16 +77,16 @@ const Blog = () => {
       keywords: "wedding videography, wedding video investment, cinematic wedding films",
       slug: "wedding-videography-investment"
     },
-    // {
-    //   id: 8,
-    //   title: "Best Wedding Venues in North Carolina: A Photographer's Guide",
-    //   excerpt: `Discover stunning wedding venues across ${location.city} and North Carolina that photograph beautifully. From mountain views to elegant ballrooms, find your perfect backdrop.`,
-    //   date: "2025-09-28",
-    //   author: "Big Day Story Team",
-    //   image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80",
-    //   keywords: `wedding venues ${location.city}, North Carolina wedding locations, outdoor wedding venues`,
-    //   slug: "best-wedding-venues-north-carolina"
-    // },
+    {
+      id: 8,
+      title: "Best Wedding Venues in North Carolina: A Photographer's Guide",
+      excerpt: `Discover stunning wedding venues across ${location.city} and North Carolina that photograph beautifully. From mountain views to elegant ballrooms, find your perfect backdrop.`,
+      date: "2025-09-28",
+      author: "Big Day Story Team",
+      image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80",
+      keywords: `wedding venues ${location.city}, North Carolina wedding locations, outdoor wedding venues`,
+      slug: "best-wedding-venues-north-carolina"
+    },
     {
       id: 9,
       title: "Bridal Portrait Session: What to Expect and How to Prepare",

@@ -25,6 +25,7 @@ import EngagementPhotoIdeas from "./pages/blog/EngagementPhotoIdeas";
 import WeddingVideographyInvestment from "./pages/blog/WeddingVideographyInvestment";
 import BridalPortraitSession from "./pages/blog/BridalPortraitSession";
 import DroneWeddingPhotography from "./pages/blog/DroneWeddingPhotography";
+import BestWeddingVenuesNC from "./pages/blog/BestWeddingVenuesNC";
 
 const queryClient = new QueryClient();
 
@@ -55,6 +56,7 @@ const App = () => (
           <Route path="/blog/wedding-videography-investment" element={<WeddingVideographyInvestment />} />
           <Route path="/blog/bridal-portrait-session-tips" element={<BridalPortraitSession />} />
           <Route path="/blog/drone-wedding-photography" element={<DroneWeddingPhotography />} />
+          <Route path="/blog/best-wedding-venues-north-carolina" element={<BestWeddingVenuesNC />} />
             <Route path="/faq" element={<FAQ />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
