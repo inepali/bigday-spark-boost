@@ -21,10 +21,9 @@ export const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-          Premier Wedding
-          <span className="block text-gold"> Photographers</span>
-          <span className="block text-2xl sm:text-3xl lg:text-4xl font-medium mt-2">
-            in {location.fullName}
+          Wedding Photographers in {location.city}, NC
+          <span className="block text-gold text-3xl sm:text-4xl lg:text-5xl font-medium mt-2">
+            Premier Photography & Videography Services
           </span>
         </h1>
         

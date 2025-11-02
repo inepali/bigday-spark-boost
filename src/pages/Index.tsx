@@ -3,6 +3,7 @@ import { AboutSection } from "@/components/AboutSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { ContactSection } from "@/components/ContactSection";
+import { SEOContentSection } from "@/components/SEOContentSection";
 import Footer from "@/components/Footer";
 import { useLocation } from "@/hooks/useLocation";
 import { Helmet } from "react-helmet-async";
@@ -86,11 +87,11 @@ const Index = () => {
   return (
     <main className="min-h-screen">
       <Helmet>
-        <title>Big Day Story - Wedding Photography in {location.fullName}</title>
+        <title>Wedding Photography {location.city} NC | Big Day Story</title>
         <meta name="description" content={location.metaDescription} />
-        <meta property="og:title" content={`Big Day Story - Wedding Photography in ${location.fullName}`} />
+        <meta property="og:title" content={`Wedding Photography ${location.city} NC | Big Day Story`} />
         <meta property="og:description" content={location.metaDescription} />
-        <link rel="canonical" href={`https://${location.code}.bigdaystory.com`} />
+        <link rel="canonical" href={`https://${location.code === 'clt' ? '' : location.code + '.'}bigdaystory.com`} />
       </Helmet>
 
       {/* Schema.org Structured Data for Wedding Photography Business */}
@@ -106,6 +107,7 @@ const Index = () => {
       <AboutSection />
       <ServicesSection />
       <TestimonialsSection />
+      <SEOContentSection />
       <ContactSection />
     </main>
   );
