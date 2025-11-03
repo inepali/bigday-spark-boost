@@ -14,6 +14,8 @@ export const HeroSection = () => {
           alt={`Elegant wedding couple in romantic moment - Big Day Story Wedding Photography in ${location.fullName}`}
           className="w-full h-full object-cover"
           loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 gradient-hero"></div>
       </div>
