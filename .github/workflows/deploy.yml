@@ -32,7 +32,7 @@ jobs:
           if [ -d "dist" ]; then echo "dir=dist" >> "$GITHUB_OUTPUT"; else echo "dir=build" >> "$GITHUB_OUTPUT"; fi
 
       - name: Deploy via rsync over SSH
-        uses: easingthemes/ssh-deploy@v5
+        uses: easingthemes/ssh-deploy@v4.1.11
         env:
           SSH_PRIVATE_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
           REMOTE_HOST: ${{ secrets.HOSTINGER_HOST }}
