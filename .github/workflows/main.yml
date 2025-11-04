@@ -1,4 +1,4 @@
-name: Deploy CLT
+name: Deploy React to Hostinger
 
 on:
   push:
