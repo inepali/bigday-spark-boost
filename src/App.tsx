@@ -33,6 +33,7 @@ const WeddingVideographyInvestment = lazy(() => import("./pages/blog/WeddingVide
 const BridalPortraitSession = lazy(() => import("./pages/blog/BridalPortraitSession"));
 const DroneWeddingPhotography = lazy(() => import("./pages/blog/DroneWeddingPhotography"));
 const BestWeddingVenuesNC = lazy(() => import("./pages/blog/BestWeddingVenuesNC"));
+const WeddingPhotographerRockHill = lazy(() => import("./pages/blog/WeddingPhotographerRockHill"));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -75,6 +76,7 @@ const App = () => (
               <Route path="/blog/bridal-portrait-session-tips" element={<BridalPortraitSession />} />
               <Route path="/blog/drone-wedding-photography" element={<DroneWeddingPhotography />} />
               <Route path="/blog/best-wedding-venues-north-carolina" element={<BestWeddingVenuesNC />} />
+              <Route path="/blog/wedding-photographer-rock-hill-sc" element={<WeddingPhotographerRockHill />} />
               <Route path="/faq" element={<FAQ />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />

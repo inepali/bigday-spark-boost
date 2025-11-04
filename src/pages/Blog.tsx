@@ -106,6 +106,16 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&q=80",
       keywords: "drone wedding photography, aerial wedding videography, wedding drone shots",
       slug: "drone-wedding-photography"
+    },
+    {
+      id: 11,
+      title: "Wedding Photographer Rock Hill SC: Complete Guide to Rock Hill Wedding Photography",
+      excerpt: "Professional wedding photographer serving Rock Hill, SC and York County. Discover the best venues, planning tips, and why couples choose Big Day Story for their Rock Hill weddings.",
+      date: "2025-11-04",
+      author: "Big Day Story Team",
+      image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
+      keywords: "wedding photographer rock hill sc, rock hill wedding photography, york county wedding photographer",
+      slug: "wedding-photographer-rock-hill-sc"
     }
   ];
 
