@@ -1,4 +1,4 @@
-name: Deploy Test
+name: Deploy
 
 on:
   push:
@@ -53,6 +53,9 @@ jobs:
       
       - name: CLT Deploy with rsync over SSH
         env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
           TARGET: ${{ secrets.HOSTINGER_PATH_CLT }}
         run: |
           RSYNC_SRC="${{ steps.out.outputs.dir }}/"
