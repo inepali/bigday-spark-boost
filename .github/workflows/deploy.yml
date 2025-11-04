@@ -1,0 +1,43 @@
+name: Deploy React to Hostinger
+
+on:
+  push:
+    branches: [ main ]  # change if your default branch is different
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build
+        run: |
+          if [ -f package-lock.json ]; then npm ci; fi
+          npm run build
+
+      - name: Choose output dir
+        id: out
+        run: |
+          if [ -d "dist" ]; then echo "dir=dist" >> "$GITHUB_OUTPUT"; else echo "dir=build" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Deploy via rsync over SSH
+        uses: easingthemes/ssh-deploy@v5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.HOSTINGER_HOST }}
+          REMOTE_USER: ${{ secrets.HOSTINGER_USER }}
+          # REMOTE_PORT: 65002   # uncomment if your SSH port is non-standard
+          ARGS: "-az --delete"
+          SOURCE: "${{ steps.out.outputs.dir }}/"
+          TARGET: ${{ secrets.HOSTINGER_PATH }}
