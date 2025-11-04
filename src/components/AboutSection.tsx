@@ -1,7 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { useLocation } from "@/hooks/useLocation";
 import { Users, Award, Clock, Heart } from "lucide-react";
 
+
 export const AboutSection = () => {
+
+  const location = useLocation();
+  
+
   const stats = [
     {
       icon: <Users className="w-8 h-8 text-primary" />,
@@ -43,7 +49,7 @@ export const AboutSection = () => {
             <div className="space-y-6 text-muted-foreground">
               <p className="text-lg leading-relaxed">
                 At Big Day Story, we believe every wedding is a <strong>unique narrative waiting to be told</strong>.
-                As experienced wedding photographers and videographers based in Charlotte, NC, our mission is to 
+                As experienced wedding photographers and videographers based in {location.city}, {location.state}, our mission is to 
                 encapsulate the essence of your special day through stunning visuals that resonate with authenticity and grace.
               </p>
               

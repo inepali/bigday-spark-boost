@@ -17,6 +17,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import { useLocation } from "@/hooks/useLocation";
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
@@ -31,6 +32,7 @@ type ContactForm = z.infer<typeof contactSchema>;
 
 export const ContactSection = () => {
   const { toast } = useToast();
+  const location = useLocation();
   const [formData, setFormData] = useState<ContactForm>({
     name: "",
     email: "",
@@ -137,7 +139,7 @@ export const ContactSection = () => {
     {
       icon: <MapPin className="w-5 h-5" />,
       label: "Service Area",
-      value: "Charlotte, NC & Carolinas",
+      value: `${location.city}, ${location.state}`,
       href: null
     },
     {
@@ -164,7 +166,7 @@ export const ContactSection = () => {
             <span className="block text-primary">Perfect Wedding Day</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Ready to book your Charlotte wedding photographer? Contact us today for a free consultation 
+            Ready to book your {location.city} wedding photographer? Contact us today for a free consultation 
             and let's discuss how we can tell your unique love story.
           </p>
         </div>

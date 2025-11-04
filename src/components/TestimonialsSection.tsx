@@ -1,7 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { useLocation } from "@/hooks/useLocation";
 import { Star, Quote } from "lucide-react";
 
 export const TestimonialsSection = () => {
+  const location = useLocation();
   const testimonials = [
     {
       name: "Sruti Hall",
@@ -35,7 +37,7 @@ export const TestimonialsSection = () => {
             <span className="block text-primary">Are Saying</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            See what our clients have to say about our wedding photography and videography services in Charlotte, NC.
+            See what our clients have to say about our wedding photography and videography services in {location.city}, {location.state}.
           </p>
         </div>
 

@@ -28,4 +28,8 @@
     <loc>https://ewn.bigdaystory.com/sitemap-ewn.xml</loc>
     <lastmod>2025-10-17</lastmod>
   </sitemap>
+    <sitemap>
+    <loc>https://ewn.bigdaystory.com/sitemap-chs.xml</loc>
+    <lastmod>2025-11-03</lastmod>
+  </sitemap>
 </sitemapindex>

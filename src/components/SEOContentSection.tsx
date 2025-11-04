@@ -13,7 +13,7 @@ export const SEOContentSection = () => {
           
           <div className="space-y-6 text-muted-foreground leading-relaxed">
             <p>
-              <strong>Big Day Story</strong> is your premier choice for wedding photography and videography services in {location.city}, North Carolina. 
+              <strong>Big Day Story</strong> is your premier choice for wedding photography and videography services in {location.city}, {location.state}. 
               We specialize in capturing the authentic emotions, intimate moments, and grand celebrations that make your wedding day uniquely yours. 
               Our experienced team of professional photographers and videographers has documented over 100 weddings across {location.areaDescription}, 
               creating timeless memories that couples cherish for a lifetime.

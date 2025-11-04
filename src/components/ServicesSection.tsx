@@ -1,10 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useLocation } from "@/hooks/useLocation";
 import { Check, Heart, Camera, Video, Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export const ServicesSection = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const packageFeatures = [
     "8 hours of photographer & videographer working together",
     "Pre-ceremony, ceremony, and reception coverage",
@@ -57,7 +60,7 @@ export const ServicesSection = () => {
             <span className="block text-primary">& Videography Services</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Professional wedding photography and videography services in Charlotte, NC. 
+            Professional wedding photography and videography services in {location.city}, {location.state}. 
             We create beautiful, timeless wedding albums and cinematic films.
           </p>
         </div>

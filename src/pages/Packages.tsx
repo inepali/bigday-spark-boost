@@ -3,8 +3,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Check, Star, Camera, Video, Heart, Plane, Clock, Users, ImageIcon } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "@/hooks/useLocation";
 
 export default function Packages() {
+  const location = useLocation();
   const packages = [
     {
       name: "DIAMOND Special",
@@ -139,7 +141,7 @@ export default function Packages() {
   return (
     <>
       <Helmet>
-        <title>Wedding Photography Packages Charlotte NC | Big Day Story</title>
+        <title>Wedding Photography Packages {location.city}, {location.state} | Big Day Story</title>
         <meta name="description" content="Professional wedding photography and videography packages in Charlotte, NC. From $1,000 - $2,900. Diamond, Gold & Platinum packages with engagement sessions included." />
         <meta name="keywords" content="wedding photography packages Charlotte NC, wedding videography pricing, Charlotte wedding photographer packages, affordable wedding photography" />
         <link rel="canonical" href="/packages" />

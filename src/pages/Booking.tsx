@@ -17,9 +17,11 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import { useLocation } from "@/hooks/useLocation";
 
 export default function Booking() {
   const { toast } = useToast();
+  const location = useLocation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
   const [formData, setFormData] = useState({
@@ -381,7 +383,7 @@ export default function Booking() {
                   <MapPin className="w-8 h-8 text-primary mx-auto mb-4" />
                   <h3 className="font-semibold mb-2">Service Area</h3>
                   <p className="text-sm text-muted-foreground">
-                    Charlotte, NC & The Carolinas
+                    {location.city}, {location.state} & The Carolinas
                   </p>
                 </CardContent>
               </Card>
