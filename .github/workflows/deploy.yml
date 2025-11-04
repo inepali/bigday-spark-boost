@@ -2,7 +2,7 @@ name: Deploy React to Hostinger
 
 on:
   push:
-    branches: [ main ]  # change if your default branch is different
+    branches: [ main ]        # change if your default branch is different
   workflow_dispatch:
 
 jobs:
@@ -22,22 +22,31 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: |
-          if [ -f package-lock.json ]; then npm ci; fi
-          npm run build
+        run: npm run build
 
-      - name: Choose output dir
+      - name: Detect output dir
         id: out
         run: |
           if [ -d "dist" ]; then echo "dir=dist" >> "$GITHUB_OUTPUT"; else echo "dir=build" >> "$GITHUB_OUTPUT"; fi
 
-      - name: Deploy via rsync over SSH
-        uses: easingthemes/ssh-deploy@v4.1.11
+      - name: Setup SSH
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
-          REMOTE_HOST: ${{ secrets.HOSTINGER_HOST }}
-          REMOTE_USER: ${{ secrets.HOSTINGER_USER }}
-          # REMOTE_PORT: 65002   # uncomment if your SSH port is non-standard
-          ARGS: "-az --delete"
-          SOURCE: "${{ steps.out.outputs.dir }}/"
+          SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          # (Optional) lock to known host to avoid prompts
+          ssh-keyscan -p "${{ secrets.HOSTINGER_PORT || '65002' }}" "$SSH_HOST" >> ~/.ssh/known_hosts
+
+      - name: Deploy with rsync over SSH
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
           TARGET: ${{ secrets.HOSTINGER_PATH }}
+        run: |
+          RSYNC_SRC="${{ steps.out.outputs.dir }}/"
+          PORT="${SSH_PORT:-65002}"
+          rsync -az --delete -e "ssh -p $PORT" "$RSYNC_SRC" "$SSH_USER@$SSH_HOST:$TARGET"
