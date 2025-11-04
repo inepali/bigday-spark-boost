@@ -40,12 +40,20 @@ jobs:
           # (Optional) lock to known host to avoid prompts
           ssh-keyscan -p "${{ secrets.HOSTINGER_PORT || '65002' }}" "$SSH_HOST" >> ~/.ssh/known_hosts
 
-      - name: Deploy with rsync over SSH
+      - name: Test Deploy with rsync over SSH
         env:
           SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
           SSH_USER: ${{ secrets.HOSTINGER_USER }}
           SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
           TARGET: ${{ secrets.HOSTINGER_PATH_TEST }}
+        run: |
+          RSYNC_SRC="${{ steps.out.outputs.dir }}/"
+          PORT="${SSH_PORT:-65002}"
+          rsync -az -e "ssh -p $PORT" "$RSYNC_SRC" "$SSH_USER@$SSH_HOST:$TARGET"
+      
+      - name: CLT Deploy with rsync over SSH
+        env:
+          TARGET: ${{ secrets.HOSTINGER_PATH_CLT }}
         run: |
           RSYNC_SRC="${{ steps.out.outputs.dir }}/"
           PORT="${SSH_PORT:-65002}"
