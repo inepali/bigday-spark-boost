@@ -1,4 +1,4 @@
-name: Deploy React to Hostinger
+name: Deploy Test
 
 on:
   push:
@@ -49,4 +49,4 @@ jobs:
         run: |
           RSYNC_SRC="${{ steps.out.outputs.dir }}/"
           PORT="${SSH_PORT:-65002}"
-          rsync -az --delete -e "ssh -p $PORT" "$RSYNC_SRC" "$SSH_USER@$SSH_HOST:$TARGET"
+          rsync -az -e "ssh -p $PORT" "$RSYNC_SRC" "$SSH_USER@$SSH_HOST:$TARGET"
