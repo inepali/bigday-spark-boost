@@ -16,7 +16,7 @@ import {
 const Blog = () => {
   const location = useLocation();
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 8;
+  const postsPerPage = 3;
 
   const blogPosts = [
     {
