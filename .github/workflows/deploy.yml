@@ -1,4 +1,4 @@
-name: Deploy React to Hostinger (update all sites)
+name: Deploy React to Hostinger (select target)
 
 on:
   push:
@@ -10,8 +10,8 @@ on:
         required: true
         type: choice
         options:
-          - test
-          - all
+          - Test Env
+          - Sync all
         default: test
 
 env:
@@ -60,29 +60,37 @@ jobs:
           PORT="${SSH_PORT:-65002}"
           ssh-keyscan -p "$PORT" "$SSH_HOST" >> ~/.ssh/known_hosts
 
-      - name: Deploy to public_html + subfolders (no delete)
+      - name: Deploy to selected target
         env:
           SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
           SSH_USER: ${{ secrets.HOSTINGER_USER }}
           SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
-          ROOT_PATH: ${{ secrets.HOSTINGER_PATH }}   # /home/u123/public_html
+          ROOT_PATH: ${{ secrets.HOSTINGER_PATH }}   # e.g. /home/u123/public_html
           RSYNC_SRC: ${{ steps.out.outputs.dir }}/
-          SUBS_INPUT: ${{ inputs.subs }}
+          TARGET: ${{ inputs.target }}
         run: |
           set -euo pipefail
-          PORT="${SSH_PORT:-65002}"
-          SUBS="${SUBS_INPUT:-}"
-          [ -z "$SUBS" ] && SUBS="${SUBS_DEFAULT}"
 
-          echo "Ensuring remote dirs exist…"
+          PORT="${SSH_PORT:-65002}"
+
+          if [ "$TARGET" = "all" ]; then
+            SUBS="${SUBS_ALL}"
+          else
+            SUBS="${SUBS_TEST}"
+          fi
+
+          echo "Deploying target: $TARGET"
+          echo "Subfolders: $SUBS"
+
+          echo "Ensuring remote directories exist…"
           ssh -p "$PORT" "$SSH_USER@$SSH_HOST" "mkdir -p '$ROOT_PATH' $(for s in $SUBS; do printf '%q ' "$ROOT_PATH/$s"; done)"
 
-          echo "Deploying to $ROOT_PATH …"
+          echo "Deploying to main site ($ROOT_PATH)…"
           rsync -az -e "ssh -p $PORT" "$RSYNC_SRC" "$SSH_USER@$SSH_HOST:$ROOT_PATH/"
 
           for s in $SUBS; do
-            echo "Deploying to $ROOT_PATH/$s …"
+            echo "Deploying to subdomain: $ROOT_PATH/$s"
             rsync -az -e "ssh -p $PORT" "$RSYNC_SRC" "$SSH_USER@$SSH_HOST:$ROOT_PATH/$s/"
           done
 
-          echo "✅ Deploy finished (no deletions)."
+          echo "✅ Deployment complete."
