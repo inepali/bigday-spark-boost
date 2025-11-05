@@ -174,7 +174,7 @@ const FAQ = () => {
                 Frequently Asked Questions
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
-                Everything you need to know about wedding photography and videography in {location.city}
+                Everything you need to know about wedding photography and videography in {location.city}, {location.state}
               </p>
             </div>
           </div>
