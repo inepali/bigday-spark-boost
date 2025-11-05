@@ -73,20 +73,17 @@ jobs:
 
           PORT="${SSH_PORT:-65002}"
 
-          if [ "$TARGET" = "all" ]; then
+          if [ "$TARGET" = "Sync all" ]; then
             SUBS="${SUBS_ALL}"
+
+            echo "Deploying to main site ($ROOT_PATH)…"
+            rsync -az -e "ssh -p $PORT" "$RSYNC_SRC" "$SSH_USER@$SSH_HOST:$ROOT_PATH/"
           else
             SUBS="${SUBS_TEST}"
           fi
 
-          echo "Deploying target: $TARGET"
-          echo "Subfolders: $SUBS"
-
           echo "Ensuring remote directories exist…"
           ssh -p "$PORT" "$SSH_USER@$SSH_HOST" "mkdir -p '$ROOT_PATH' $(for s in $SUBS; do printf '%q ' "$ROOT_PATH/$s"; done)"
-
-          echo "Deploying to main site ($ROOT_PATH)…"
-          rsync -az -e "ssh -p $PORT" "$RSYNC_SRC" "$SSH_USER@$SSH_HOST:$ROOT_PATH/"
 
           for s in $SUBS; do
             echo "Deploying to subdomain: $ROOT_PATH/$s"
