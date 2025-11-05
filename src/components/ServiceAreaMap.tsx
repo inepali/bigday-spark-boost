@@ -23,7 +23,7 @@ export const ServiceAreaMap = ({ location }: ServiceAreaMapProps) => {
     // Initialize map
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/light-v11',
+      style: 'mapbox://styles/mapbox/streets-v12',
       center: [parseFloat(location.longitude), parseFloat(location.latitude)],
       zoom: 9,
       attributionControl: false,
