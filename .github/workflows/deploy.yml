@@ -5,14 +5,19 @@ on:
     branches: [ main ]
   workflow_dispatch:
     inputs:
-      subs:
-        description: "Space-separated subfolders under public_html (e.g., 'clt rdu gso')"
-        required: false
-        default: "clt test"
+      target:
+        description: "Select where to deploy"
+        required: true
+        type: choice
+        options:
+          - test
+          - all
+        default: test
 
 env:
   NODE_VERSION: "20"
-  SUBS_DEFAULT: "clt test"   # edit to add more by default
+  SUBS_ALL: "clt rdu gso"   # all subdomains you want to deploy
+  SUBS_TEST: "test"         # only test deployment by default
 
 jobs:
   build-and-deploy:
