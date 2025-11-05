@@ -16,7 +16,7 @@ const FAQ = () => {
       questions: [
         {
           q: "How far in advance should we book?",
-          a: `We recommend booking 9-12 months in advance, especially for peak wedding season (May-October) in ${location.city}. However, we do accept last-minute bookings based on availability.`
+          a: `We recommend booking 9-12 months in advance, especially for peak wedding season (May-October) in ${location.city}, ${location.state}. However, we do accept last-minute bookings based on availability.`
         },
         {
           q: "What's included in your packages?",
