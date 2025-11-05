@@ -18,6 +18,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { useLocation } from "@/hooks/useLocation";
+import { ServiceAreaMap } from "@/components/ServiceAreaMap";
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
@@ -277,36 +278,9 @@ export const ContactSection = () => {
             </CardContent>
           </Card>
 
-          {/* Contact Information */}
+          {/* Service Area Map */}
           <div className="space-y-8">
-            {/* Contact Details */}
-            <Card className="shadow-soft border-0 bg-card/80 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-xl font-bold">Contact Information</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {contactInfo.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="p-2 rounded-full bg-primary-soft text-primary">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <div className="font-medium text-foreground">{item.label}</div>
-                      {item.href ? (
-                        <a 
-                          href={item.href} 
-                          className="text-primary hover:underline transition-smooth"
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <div className="text-muted-foreground">{item.value}</div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
+            <ServiceAreaMap location={location} />
 
             {/* Social Media */}
             <Card className="shadow-soft border-0 bg-card/80 backdrop-blur-sm">
