@@ -18,7 +18,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { useLocation } from "@/hooks/useLocation";
-import { ServiceAreaMap } from "@/components/ServiceAreaMap";
+import { LazyServiceAreaMap } from "@/components/LazyServiceAreaMap";
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
@@ -280,7 +280,7 @@ export const ContactSection = () => {
 
           {/* Service Area Map */}
           <div className="space-y-8">
-            <ServiceAreaMap location={location} />
+            <LazyServiceAreaMap location={location} />
 
             {/* Social Media */}
             <Card className="shadow-soft border-0 bg-card/80 backdrop-blur-sm">

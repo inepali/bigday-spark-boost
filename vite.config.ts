@@ -22,6 +22,7 @@ export default defineConfig(({ mode }) => ({
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'ui-vendor': ['@radix-ui/react-slot', 'class-variance-authority', 'clsx', 'tailwind-merge'],
           'query-vendor': ['@tanstack/react-query'],
+          'mapbox-vendor': ['mapbox-gl'],
         },
       },
     },

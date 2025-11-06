@@ -20,13 +20,15 @@ export const ServiceAreaMap = ({ location }: ServiceAreaMapProps) => {
 
     mapboxgl.accessToken = MAPBOX_TOKEN;
 
-    // Initialize map
+    // Initialize map with performance optimizations
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
       center: [parseFloat(location.longitude), parseFloat(location.latitude)],
       zoom: 9,
       attributionControl: false,
+      trackResize: false, // Disable resize tracking for better performance
+      collectResourceTiming: false, // Disable telemetry to reduce API calls
     });
 
     // Add navigation controls
@@ -37,17 +39,10 @@ export const ServiceAreaMap = ({ location }: ServiceAreaMapProps) => {
       'top-right'
     );
 
-    // Create custom marker element
-    const el = document.createElement('div');
-    el.className = 'custom-marker';
-    el.style.width = '32px';
-    el.style.height = '32px';
-    el.style.backgroundImage = 'url(https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png)';
-    el.style.backgroundSize = 'contain';
-    el.style.cursor = 'pointer';
-
-    // Add marker with popup
-    marker.current = new mapboxgl.Marker(el)
+    // Add marker with popup (using default marker for better performance)
+    marker.current = new mapboxgl.Marker({
+      color: 'hsl(var(--primary))',
+    })
       .setLngLat([parseFloat(location.longitude), parseFloat(location.latitude)])
       .setPopup(
         new mapboxgl.Popup({ offset: 25 })
