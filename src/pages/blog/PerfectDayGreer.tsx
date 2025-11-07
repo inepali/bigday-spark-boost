@@ -44,6 +44,7 @@ const PerfectDayGreer = () => {
           <img
             src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1200&q=80"
             alt="Wedding rings and engagement photography"
+            loading="lazy"
             className="w-full h-[400px] object-cover rounded-lg mb-8"
           />
 

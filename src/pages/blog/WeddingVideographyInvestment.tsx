@@ -44,6 +44,7 @@ const WeddingVideographyInvestment = () => {
           <img
             src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1200&q=80"
             alt="Professional wedding videographer capturing ceremony moments"
+            loading="lazy"
             className="w-full h-[400px] object-cover rounded-lg mb-8"
           />
 

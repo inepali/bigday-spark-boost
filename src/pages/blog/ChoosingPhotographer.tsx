@@ -44,6 +44,7 @@ const ChoosingPhotographer = () => {
           <img
             src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&q=80"
             alt="Professional wedding photographer capturing couple's special moments"
+            loading="lazy"
             className="w-full h-[400px] object-cover rounded-lg mb-8"
           />
 

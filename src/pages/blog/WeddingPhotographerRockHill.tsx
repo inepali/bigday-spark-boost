@@ -117,6 +117,7 @@ const WeddingPhotographerRockHill = () => {
           <img 
             src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80" 
             alt="Professional wedding photographer Rock Hill SC venue"
+            loading="lazy"
             className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-xl"
           />
 
@@ -149,6 +150,7 @@ const WeddingPhotographerRockHill = () => {
             <img 
               src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1200&q=80" 
               alt="Rock Hill SC wedding reception photography"
+              loading="lazy"
               className="w-full h-[350px] object-cover rounded-lg my-8 shadow-lg"
             />
 
@@ -188,6 +190,7 @@ const WeddingPhotographerRockHill = () => {
             <img 
               src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80" 
               alt="York County South Carolina wedding venue exterior"
+              loading="lazy"
               className="w-full h-[350px] object-cover rounded-lg my-8 shadow-lg"
             />
 
@@ -260,6 +263,7 @@ const WeddingPhotographerRockHill = () => {
             <img 
               src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80" 
               alt="Bride preparation Rock Hill wedding photography"
+              loading="lazy"
               className="w-full h-[350px] object-cover rounded-lg my-8 shadow-lg"
             />
 
@@ -321,6 +325,7 @@ const WeddingPhotographerRockHill = () => {
             <img 
               src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1200&q=80" 
               alt="Rock Hill South Carolina couple wedding portrait"
+              loading="lazy"
               className="w-full h-[350px] object-cover rounded-lg my-8 shadow-lg"
             />
 

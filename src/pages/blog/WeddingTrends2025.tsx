@@ -44,6 +44,7 @@ const WeddingTrends2025 = () => {
           <img
             src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=1200&q=80"
             alt="Modern wedding photography trends 2025"
+            loading="lazy"
             className="w-full h-[400px] object-cover rounded-lg mb-8"
           />
 

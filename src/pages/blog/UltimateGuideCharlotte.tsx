@@ -44,6 +44,7 @@ const UltimateGuideCharlotte = () => {
           <img
             src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80"
             alt="Outdoor wedding photography in Charlotte"
+            loading="lazy"
             className="w-full h-[400px] object-cover rounded-lg mb-8"
           />
 

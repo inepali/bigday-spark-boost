@@ -44,6 +44,7 @@ const BestWeddingVenuesNC = () => {
           <img 
             src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80" 
             alt="Beautiful North Carolina wedding venue with mountain views"
+            loading="lazy"
             className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-xl"
           />
 

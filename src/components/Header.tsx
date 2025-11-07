@@ -26,6 +26,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="Big Day Story - Wedding Photography"
+              loading="lazy"
               className="h-12 w-auto transition-transform group-hover:scale-105"
             />
           </Link>
