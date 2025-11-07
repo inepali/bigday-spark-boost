@@ -12,7 +12,7 @@ on:
 
 env:
   NODE_VERSION: "20"
-  SUBS_ALL: "clt rdu gsp ilm gso ewn avl fay chs"   # full list of all subdomains
+  SUBS_ALL: "clt rdu gsp ilm gso ewn avl fay chs clm mtl gnv hhd"   # full list of all subdomains
   SUBS_TEST: "test"             # default test deployment only
 
 jobs:
