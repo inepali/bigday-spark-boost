@@ -94,9 +94,53 @@ export const locations: Record<string, Location> = {
     fullName: "Charleston, SC",
     latitude: "32.776566",
     longitude: "-79.930923",
-    areaDescription: "Charleston, the South Carolina port city",
+    areaDescription: "Charleston & Coastal area",
     metaDescription:
       "Premier wedding photographers and videographers in Charleston, SC. Capturing timeless moments with elegance & emotion.",
+  },
+  clm: {
+    code: "clm",
+    city: "Columbia",
+    state: "SC",
+    fullName: "Columbia, SC",
+    latitude: "34.000751",
+    longitude: "-81.035221",
+    areaDescription: "Columbia & Central South Carolina",
+    metaDescription:
+      "Premier wedding photographers and videographers in Columbia, SC. Capturing timeless moments with elegance & emotion.",
+  },
+  mtl: {
+    code: "mtl",
+    city: "Myrtle Beach",
+    state: "SC",
+    fullName: "Myrtle Beach, SC",
+    latitude: "33.689060",
+    longitude: "-78.886696",
+    areaDescription: "Myrtle Beach & Coastal area",
+    metaDescription:
+      "Premier wedding photographers and videographers in Myrtle Beach, SC. Capturing timeless moments with elegance & emotion.",
+  },
+  gnv: {
+    code: "gnv",
+    city: "Greenville",
+    state: "SC",
+    fullName: "Greenville, SC",
+    latitude: "34.852619",
+    longitude: "-82.394012",
+    areaDescription: "Greenville-Spartanburg & Upstate area",
+    metaDescription:
+      "Premier wedding photographers and videographers in Greenville/Spartanburg, SC. Capturing timeless moments with elegance & emotion.",
+  },
+  hhd: {
+    code: "hhd",
+    city: "Hilton Head Island",
+    state: "SC",
+    fullName: "Hilton Head Island, SC",
+    latitude: "32.178890",
+    longitude: "-80.743057",
+    areaDescription: "Hilton Head Island & Coastal area",
+    metaDescription:
+      "Premier wedding photographers and videographers in Hilton Head Island, SC. Capturing timeless moments with elegance & emotion.",
   },
 };
 
