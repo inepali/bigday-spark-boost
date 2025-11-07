@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-wedding.jpg";
+import heroImageMobile from "@/assets/hero-wedding-mobile.jpg";
+import heroImageDesktop from "@/assets/hero-wedding-desktop.jpg";
 import { useLocation } from "@/hooks/useLocation";
 
 export const HeroSection = () => {
@@ -9,14 +10,17 @@ export const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <img 
-          src={heroImage} 
-          alt={`Elegant wedding couple in romantic moment - Big Day Story Wedding Photography in ${location.fullName}`}
-          className="w-full h-full object-cover"
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-        />
+        <picture>
+          <source media="(min-width: 768px)" srcSet={heroImageDesktop} />
+          <img 
+            src={heroImageMobile} 
+            alt={`Elegant wedding couple in romantic moment - Big Day Story Wedding Photography in ${location.fullName}`}
+            className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
         <div className="absolute inset-0 gradient-hero"></div>
       </div>
       
