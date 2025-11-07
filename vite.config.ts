@@ -24,11 +24,22 @@ export default defineConfig(({ mode }) => ({
           'query-vendor': ['@tanstack/react-query'],
           'mapbox-vendor': ['mapbox-gl'],
         },
+        // Optimize asset output
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name?.endsWith('.css')) {
+            return 'assets/styles/[name]-[hash][extname]';
+          }
+          return 'assets/[name]-[hash][extname]';
+        },
       },
     },
     minify: 'esbuild',
     cssCodeSplit: true,
     cssMinify: true,
     chunkSizeWarningLimit: 1000,
+    // Improve module preload
+    modulePreload: {
+      polyfill: false,
+    },
   },
 }));
