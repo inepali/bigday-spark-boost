@@ -27,6 +27,8 @@ const Index = () => {
     "email": "info@bigdaystory.com",
     "address": {
       "@type": "PostalAddress",
+      "postalCode": "28269",
+      "streetAddress": "3141 Hutton Gardens Ln",
       "addressLocality": location.city,
       "addressRegion": location.state,
       "addressCountry": "US"
