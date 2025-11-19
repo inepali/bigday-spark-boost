@@ -14,6 +14,11 @@ const Index = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "image": [
+        "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=800,h=800,fit=crop/dJo6WXrDBJH0xnOO/750_6509-mk3zGr2pG0CRwq2m.jpg",
+        "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=800,h=800,fit=crop/dJo6WXrDBJH0xnOO/doko-9319-mxBZOajV6XhZLPQb.JPG",
+        "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=800,h=800,fit=crop/dJo6WXrDBJH0xnOO/doko-7898-YrDlbrlgxviJjMz4.jpg"
+       ],
     "@id": `https://${location.code}.bigdaystory.com`,
     "name": `Big Day Story - ${location.city}`,
     "description": location.metaDescription,
