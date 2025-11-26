@@ -13,12 +13,71 @@ const BestWeddingVenuesNC = () => {
         <meta name="description" content={`Discover stunning wedding venues across ${location.city} and North Carolina that photograph beautifully. From mountain views to elegant ballrooms, expert photography recommendations.`} />
         <meta name="keywords" content={`wedding venues ${location.city}, North Carolina wedding locations, outdoor wedding venues, mountain wedding venues NC, barn wedding venues Carolina, elegant wedding venues`} />
         <link rel="canonical" href={`https://${location.code === 'clt' ? '' : location.code + '.'}bigdaystory.com/blog/best-wedding-venues-north-carolina`} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Best Wedding Venues in North Carolina: A Photographer's Guide",
+            "image": "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80",
+            "author": {
+              "@type": "Organization",
+              "name": "Big Day Story"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Big Day Story",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://bigdaystory.com/logo.png"
+              }
+            },
+            "datePublished": "2025-09-28",
+            "dateModified": "2025-09-28"
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": `https://${location.code}.bigdaystory.com`
+            }, {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blog",
+              "item": `https://${location.code}.bigdaystory.com/blog`
+            }, {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Best Wedding Venues in North Carolina",
+              "item": `https://${location.code}.bigdaystory.com/blog/best-wedding-venues-north-carolina`
+            }]
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": `Big Day Story - ${location.city}`,
+            "image": "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": location.city,
+              "addressRegion": location.state,
+              "addressCountry": "US"
+            },
+            "url": `https://${location.code}.bigdaystory.com/blog/best-wedding-venues-north-carolina`
+          })}
+        </script>
       </Helmet>
 
       <article className="min-h-screen bg-gradient-to-b from-background to-muted/20 py-12">
         <div className="container max-w-4xl mx-auto px-4">
-          <Link 
-            to="/blog" 
+          <Link
+            to="/blog"
             className="inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-8"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -41,8 +100,8 @@ const BestWeddingVenuesNC = () => {
             </div>
           </header>
 
-          <img 
-            src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80" 
+          <img
+            src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80"
             alt="Beautiful North Carolina wedding venue with mountain views"
             loading="lazy"
             className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-xl"
@@ -159,8 +218,8 @@ const BestWeddingVenuesNC = () => {
           </div>
 
           <div className="mt-12 pt-8 border-t">
-            <Link 
-              to="/blog" 
+            <Link
+              to="/blog"
               className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />

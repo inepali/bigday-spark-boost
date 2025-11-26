@@ -10,15 +10,15 @@ import { Helmet } from "react-helmet-async";
 
 const Index = () => {
   const location = useLocation();
-  
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "image": [
-        "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=800,h=800,fit=crop/dJo6WXrDBJH0xnOO/750_6509-mk3zGr2pG0CRwq2m.jpg",
-        "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=800,h=800,fit=crop/dJo6WXrDBJH0xnOO/doko-9319-mxBZOajV6XhZLPQb.JPG",
-        "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=800,h=800,fit=crop/dJo6WXrDBJH0xnOO/doko-7898-YrDlbrlgxviJjMz4.jpg"
-       ],
+      "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=800,h=800,fit=crop/dJo6WXrDBJH0xnOO/750_6509-mk3zGr2pG0CRwq2m.jpg",
+      "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=800,h=800,fit=crop/dJo6WXrDBJH0xnOO/doko-9319-mxBZOajV6XhZLPQb.JPG",
+      "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=800,h=800,fit=crop/dJo6WXrDBJH0xnOO/doko-7898-YrDlbrlgxviJjMz4.jpg"
+    ],
     "@id": `https://${location.code}.bigdaystory.com`,
     "name": `Big Day Story - ${location.city}`,
     "description": location.metaDescription,
@@ -48,13 +48,13 @@ const Index = () => {
         }
       },
       {
-        "@type": "State", 
+        "@type": "State",
         "name": "North Carolina"
       }
     ],
     "serviceType": [
       "Wedding Photography",
-      "Wedding Videography", 
+      "Wedding Videography",
       "Engagement Photography",
       "Bridal Photography",
       "Drone Videography"
@@ -90,7 +90,18 @@ const Index = () => {
       ]
     }
   };
-  
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": `https://${location.code}.bigdaystory.com`
+    }]
+  };
+
   return (
     <main className="min-h-screen">
       <Helmet>
@@ -106,6 +117,12 @@ const Index = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(structuredData)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbData)
         }}
       />
 
