@@ -128,6 +128,16 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
       keywords: "wedding photographer rock hill sc, rock hill wedding photography, york county wedding photographer",
       slug: "wedding-photographer-rock-hill-sc"
+    },
+    {
+      id: 12,
+      title: "Wedding Videographer Charlotte NC: Capturing Your Love Story",
+      excerpt: "Premier wedding videographer in Charlotte, NC. Discover why cinematic wedding films are the perfect way to preserve your memories and how we capture your unique love story.",
+      date: "2025-11-27",
+      author: "Big Day Story Team",
+      image: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=80",
+      keywords: "wedding videographer charlotte nc, charlotte wedding videography, cinematic wedding films",
+      slug: "wedding-videographer-charlotte-nc"
     }
   ];
 
@@ -210,10 +220,10 @@ const Blog = () => {
                     <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-4 h-4" />
-                        {new Date(post.date).toLocaleDateString('en-US', { 
-                          month: 'short', 
-                          day: 'numeric', 
-                          year: 'numeric' 
+                        {new Date(post.date).toLocaleDateString('en-US', {
+                          month: 'short',
+                          day: 'numeric',
+                          year: 'numeric'
                         })}
                       </span>
                       <span className="flex items-center gap-1">
@@ -244,12 +254,12 @@ const Blog = () => {
                 <Pagination>
                   <PaginationContent>
                     <PaginationItem>
-                      <PaginationPrevious 
+                      <PaginationPrevious
                         onClick={() => currentPage > 1 && handlePageChange(currentPage - 1)}
                         className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
                       />
                     </PaginationItem>
-                    
+
                     {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                       <PaginationItem key={page}>
                         <PaginationLink
@@ -261,9 +271,9 @@ const Blog = () => {
                         </PaginationLink>
                       </PaginationItem>
                     ))}
-                    
+
                     <PaginationItem>
-                      <PaginationNext 
+                      <PaginationNext
                         onClick={() => currentPage < totalPages && handlePageChange(currentPage + 1)}
                         className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
                       />
